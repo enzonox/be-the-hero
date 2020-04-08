@@ -3,7 +3,6 @@ import { Link, useHistory } from 'react-router-dom';
 import { FiPower, FiTrash2 } from 'react-icons/fi';
 
 import api from '../../services/api';
-
 import logoImg from '../../assets/logo.svg';
 
 import './styles.css';
@@ -16,6 +15,7 @@ export default function Profile() {
 
     const history = useHistory();
 
+    //listando casos da Ong
     useEffect(() => {
         api.get('profile', {
             headers: {

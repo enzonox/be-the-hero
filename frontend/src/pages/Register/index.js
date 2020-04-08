@@ -3,9 +3,9 @@ import { Link, useHistory } from 'react-router-dom';
 import { FiArrowLeft} from 'react-icons/fi';
 
 import api from '../../services/api';
-import './styles.css';
-
 import logoImg from '../../assets/logo.svg';
+
+import './styles.css';
 
 export default function Register() {
     const [name, setName] = useState('');
@@ -17,7 +17,7 @@ export default function Register() {
     const history = useHistory();
 
     async function handleRegister(e) {
-        e.preventDefault();//Impede reload após submit
+        e.preventDefault();//Impede reload da página após submit
 
         const data ={
             name, 
@@ -32,7 +32,7 @@ export default function Register() {
 
         alert(`Seu ID de acesso: ${response.data.id}`);
 
-        history.push('/');//Voltando para tela de login após cadastro
+        history.push('/');
         } catch (err) {
             alert('Erro no cadastro, tente novamente.');
         }

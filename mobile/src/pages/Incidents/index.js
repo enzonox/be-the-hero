@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Feather } from '@expo/vector-icons';
-import { useNavigation } from '@react-navigation/native';
 import { View, FlatList, Image, Text, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { Feather } from '@expo/vector-icons';
+
 
 import api from '../../services/api';
-
 import logoImg from '../../assets/logo.png';
-
 import styles from './styles';
 
 export default function Incidents() {
     const [incidents, setIncidents] = useState([]);
     const [total, setTotal] = useState(0);
+
     const [page, setPage] = useState(1);
     const [loading, setLoading] = useState(false);
 
@@ -21,6 +21,7 @@ export default function Incidents() {
         navigation.navigate('Detail', { incident });
     }
     
+    //scroll infinito
     async function loadIncidents() {
         if (loading) {
             return;
@@ -62,7 +63,7 @@ export default function Incidents() {
                 data={incidents}
                 style={styles.incidentList}
                 keyExtractor={incident => String(incident.id)}
-                //showsVerticalScrollIndicator={false}
+                showsVerticalScrollIndicator={false}
                 onEndReached={loadIncidents}
                 onEndReachedThreshold={0.2}
                 renderItem={({ item: incident }) => (

@@ -3,9 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import { FiLogIn } from 'react-icons/fi';
 
 import api from '../../services/api';
-
 import './styles.css';
-
 import logoImg from '../../assets/logo.svg';
 import heroesImg from '../../assets/heroes.png';
 
@@ -16,6 +14,7 @@ export default function Logon() {
     async function handleLogin(e) {
         e.preventDefault();
 
+        //iniciando uma sessão de logon
         try {
             const response = await api.post('sessions', { id });
 

@@ -14,6 +14,7 @@ routes.post('/sessions', celebrate({
         id: Joi.string().required().length(8)
     }),
 }), SessionController.create);
+//-------------------------------------------------------
 
 // Ongs
 routes.get('/ongs', OngController.index);
@@ -27,7 +28,9 @@ routes.post('/ongs', celebrate({
         uf: Joi.string().required().length(2),
     })
 }), OngController.create);
+//-------------------------------------------------------
 
+//casos
 routes.get('/profile', celebrate({
     [Segments.HEADERS]: Joi.object({
         authorization: Joi.string().required(),
