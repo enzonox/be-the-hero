@@ -22,6 +22,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 - [React Native](https://facebook.github.io/react-native/)
 - [Expo](https://expo.io/)
 - [Sqlite](https://sqlite.org/)
+- [Jestjs](https://jestjs.io/)
+- [Express](https://expressjs.com/pt-br/)
 
 ## Como rodar o App
 
